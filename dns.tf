@@ -19,31 +19,7 @@ resource "aws_route53_record" "main-txt" {
   ]
   ttl = 900
 }
-/*
-resource "aws_route53_record" "ya-che" {
-  name = "ya.dekker-and.digital"
-  type = "ns"
-  zone_id = ""
-  records = [
-  ]
-}
-*/
-/*
-resource "aws_route53_record" "splink-zone" {
-  name = "ya.${var.dns}"
-  zone_id = aws_route53_zone.club-dns.id
-  type = "NS"
-  ttl = 900
-  records = [
-    "ns-1534.awsdns-63.org",
-    "ns-1656.awsdns-15.co.uk",
-    "ns-497.awsdns-62.com",
-    "ns-688.awsdns-22.net"
-  ]
-}
-*/
 
-  
 resource "aws_route53_record" "alex-zone" {
   name = join(".", ["alex", var.dns])
   zone_id = aws_route53_zone.main.id
@@ -56,3 +32,17 @@ resource "aws_route53_record" "alex-zone" {
     "ns-711.awsdns-24.net",
   ]
 }
+
+resource "aws_route53_record" "alex-zone" {
+  name = "sarang.${var.dns}"
+  zone_id = aws_route53_zone.main.id
+  type = "NS"
+  ttl = 900
+  records = [
+    "ns-1126.awsdns-12.org",
+    "ns-1858.awsdns-40.co.uk",
+    "ns-477.awsdns-59.com",
+    "ns-808.awsdns-37.net",
+  ]
+}
+
