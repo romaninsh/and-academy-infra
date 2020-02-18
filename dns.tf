@@ -45,14 +45,14 @@ resource "aws_route53_record" "splink-zone" {
 
   
 resource "aws_route53_record" "alex-zone" {
-  name = "alex.${var.dns}"
+  name = join(".", ["alex", var.dns])
   zone_id = aws_route53_zone.main.id
   type = "NS"
   ttl = 900
   records = [
-    "ns-1379.awsdns-44.org",
-    "ns-1583.awsdns-05.co.uk",
-    "ns-43.awsdns-05.com",
-    "ns-716.awsdns-25.net"
+    "ns-1205.awsdns-22.org",
+    "ns-156.awsdns-19.com",
+    "ns-2027.awsdns-61.co.uk",
+    "ns-711.awsdns-24.net",
   ]
 }
