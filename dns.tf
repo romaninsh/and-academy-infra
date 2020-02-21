@@ -33,7 +33,7 @@ resource "aws_route53_record" "alex-zone" {
   ]
 }
 
-resource "aws_route53_record" "alex-zone" {
+resource "aws_route53_record" "sarang-zone" {
   name = "sarang.${var.dns}"
   zone_id = aws_route53_zone.main.id
   type = "NS"

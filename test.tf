@@ -35,6 +35,16 @@ module "rds" {
   subnets = module.vpc.private_subnets
 }
 
+module "fargate" {
+  source = "./fargate"
+  name = var.prefix
+  prod = var.prod
+  vpc = module.vpc.vpc_id
+  subnets = module.vpc.private_subnets
+  public_subnets = module.vpc.public_subnets
+  #subnets = module.vpc.private_subnets
+}
+
 output "db_password" {
   value = module.rds.db_password
 }
